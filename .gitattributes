@@ -1,0 +1,14 @@
+# Normalize line endings on checkin, keep them native on checkout
+* text=auto
+
+# Scripts / wrappers must stay LF
+gradlew        text eol=lf
+*.sh           text eol=lf
+*.bat          text eol=crlf
+
+# Binary assets
+*.webp         binary
+*.jar          binary
+*.keystore     binary
+*.png          binary
+*.jpg          binary
