@@ -8,14 +8,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.dmirzayants.runlab.Constants.Constants
+import com.dmirzayants.runlab.constants.Constants
 import com.dmirzayants.runlab.R
 import com.dmirzayants.runlab.TrackingUtility
 import com.dmirzayants.runlab.databinding.FragmentRunBinding
 import dagger.hilt.android.AndroidEntryPoint
 import pub.devrel.easypermissions.AppSettingsDialog
 import pub.devrel.easypermissions.EasyPermissions
-import java.util.jar.Manifest
 
 @AndroidEntryPoint
 class RunFragment : Fragment(), EasyPermissions.PermissionCallbacks {

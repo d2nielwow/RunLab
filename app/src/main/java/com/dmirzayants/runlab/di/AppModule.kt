@@ -2,7 +2,7 @@ package com.dmirzayants.runlab.di
 
 import android.content.Context
 import androidx.room.Room
-import com.dmirzayants.runlab.Constants.Constants.RUNNING_DATABASE_NAME
+import com.dmirzayants.runlab.constants.Constants.RUNNING_DATABASE_NAME
 import com.dmirzayants.runlab.db.RunningDatabase
 import dagger.Module
 import dagger.Provides
