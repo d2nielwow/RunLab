@@ -1,45 +1,67 @@
 package com.dmirzayants.runlab
 
+import android.content.Intent
 import android.os.Bundle
-import android.view.View
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.setupWithNavController
-import com.dmirzayants.runlab.databinding.ActivityMainBinding
+import androidx.activity.viewModels
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.runtime.getValue
+import androidx.compose.ui.Modifier
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.dmirzayants.runlab.constants.Constants
+import com.dmirzayants.runlab.ui.MainViewModel
+import com.dmirzayants.runlab.ui.RunLabApp
+import com.dmirzayants.runlab.ui.theme.RunLabTheme
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.MutableStateFlow
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity() {
+class MainActivity : ComponentActivity() {
 
-    private lateinit var binding: ActivityMainBinding
+    private val viewModel: MainViewModel by viewModels()
+
+    private val openTrackingRequested = MutableStateFlow(false)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        if (savedInstanceState == null) handleIntent(intent)
 
-        setSupportActionBar(binding.toolbar)
-
-        val navHostFragment =
-            supportFragmentManager.findFragmentById(R.id.navHostFragment) as NavHostFragment
-        binding.bottomNavigationView.setupWithNavController(
-            navHostFragment.findNavController()
-        )
-
-        navHostFragment.findNavController()
-            .addOnDestinationChangedListener { _, destination, _ ->
-                when (destination.id) {
-                    R.id.settingsFragment,
-                    R.id.runFragment,
-                    R.id.statisticsFragment ->
-                        binding.bottomNavigationView.visibility = View.VISIBLE
-
-                    else -> binding.bottomNavigationView.visibility = View.GONE
+        setContent {
+            RunLabTheme {
+                val profile by viewModel.profile.collectAsStateWithLifecycle()
+                val openTracking by openTrackingRequested.collectAsStateWithLifecycle()
+                Box(
+                    Modifier
+                        .fillMaxSize()
+                        .background(MaterialTheme.colorScheme.background)
+                ) {
+                    // Render nothing until DataStore is read so the start destination is right.
+                    profile?.let {
+                        RunLabApp(
+                            profile = it,
+                            openTrackingRequested = openTracking,
+                            onOpenTrackingHandled = { openTrackingRequested.value = false }
+                        )
+                    }
                 }
             }
+        }
+    }
 
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        handleIntent(intent)
+    }
+
+    private fun handleIntent(intent: Intent?) {
+        if (intent?.action == Constants.ACTION_SHOW_TRACKING_SCREEN) {
+            openTrackingRequested.value = true
+        }
     }
 }

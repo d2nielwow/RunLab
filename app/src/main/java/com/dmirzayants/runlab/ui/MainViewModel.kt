@@ -1,12 +1,21 @@
 package com.dmirzayants.runlab.ui
 
 import androidx.lifecycle.ViewModel
-import com.dmirzayants.runlab.repository.MainRepository
+import androidx.lifecycle.viewModelScope
+import com.dmirzayants.runlab.prefs.UserPreferencesRepository
+import com.dmirzayants.runlab.prefs.UserProfile
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.stateIn
 import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-    val mainRepository: MainRepository
+    userPreferences: UserPreferencesRepository
 ) : ViewModel() {
+
+    /** null until DataStore has been read; the start destination depends on it. */
+    val profile: StateFlow<UserProfile?> = userPreferences.userProfile
+        .stateIn(viewModelScope, SharingStarted.Eagerly, null)
 }
