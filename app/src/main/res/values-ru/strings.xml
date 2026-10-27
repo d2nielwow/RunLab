@@ -1,0 +1,60 @@
+<resources>
+    <string name="toolbar_lets_go">Вперёд, %1$s!</string>
+
+    <string name="nav_runs">Пробежки</string>
+    <string name="nav_statistics">Статистика</string>
+    <string name="nav_settings">Настройки</string>
+
+    <string name="setup_welcome">Добро пожаловать!\nВведите имя и вес.</string>
+    <string name="field_name">Имя</string>
+    <string name="field_weight">Вес</string>
+    <string name="unit_kg">кг</string>
+    <string name="error_name_required">Введите имя</string>
+    <string name="error_weight_invalid">Введите корректный вес</string>
+    <string name="setup_continue">Продолжить</string>
+    <string name="settings_apply">Сохранить</string>
+    <string name="settings_saved">Изменения сохранены</string>
+
+    <string name="runs_sort_by">Сортировка</string>
+    <string name="sort_date">Дата</string>
+    <string name="sort_running_time">Время бега</string>
+    <string name="sort_distance">Дистанция</string>
+    <string name="sort_avg_speed">Средняя скорость</string>
+    <string name="sort_calories">Калории</string>
+    <string name="runs_empty">Пробежек пока нет.\nНажмите +, чтобы начать первую.</string>
+    <string name="runs_start_run">Начать пробежку</string>
+    <string name="run_map_snapshot">Карта маршрута</string>
+    <string name="run_delete_title">Удалить пробежку?</string>
+    <string name="run_delete_message">Пробежка будет удалена без возможности восстановления.</string>
+    <string name="action_delete">Удалить</string>
+    <string name="action_cancel">Отмена</string>
+
+    <string name="permission_title">Нужен доступ к геолокации</string>
+    <string name="permission_message">RunLab использует геолокацию, чтобы записывать маршрут пробежки.</string>
+    <string name="permission_grant">Разрешить</string>
+    <string name="permission_open_settings">Открыть настройки</string>
+
+    <string name="tracking_start">Старт</string>
+    <string name="tracking_stop">Стоп</string>
+    <string name="tracking_finish">Завершить</string>
+    <string name="tracking_cancel_run">Отменить пробежку</string>
+    <string name="tracking_cancel_title">Отменить пробежку?</string>
+    <string name="tracking_cancel_message">Текущая пробежка и все её данные будут удалены. Продолжить?</string>
+    <string name="tracking_run_saved">Пробежка сохранена</string>
+    <string name="action_yes">Да</string>
+    <string name="action_no">Нет</string>
+    <string name="action_pause">Пауза</string>
+    <string name="action_resume">Продолжить</string>
+    <string name="notification_channel_tracking">Запись пробежки</string>
+
+    <string name="stats_total_distance">Общая дистанция</string>
+    <string name="stats_total_time">Общее время</string>
+    <string name="stats_total_calories">Всего калорий</string>
+    <string name="stats_avg_speed">Средняя скорость</string>
+    <string name="stats_chart_title">Средняя скорость по пробежкам</string>
+    <string name="stats_no_runs">Пробежек пока нет</string>
+
+    <string name="format_distance_km">%1$.2f км</string>
+    <string name="format_speed_kmh">%1$.1f км/ч</string>
+    <string name="format_calories">%1$d ккал</string>
+</resources>

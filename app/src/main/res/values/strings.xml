@@ -1,26 +1,68 @@
 <resources>
-    <string name="app_name">RunLab</string>
-    <string-array name="filter_options">
-        <item>Date</item>
-        <item>Running Time</item>
-        <item>Distance</item>
-        <item>Average Speed</item>
-        <item>Calories Burned</item>
-    </string-array>
-    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyBHMqYI0uuQyUwVmRIVWxXZiLTjmpLQvY8</string>
-    <string name="start_text">Start</string>
-    <string name="stop_text">Stop</string>
-    <string name="run_sort_by">Sort by:</string>
+    <string name="app_name" translatable="false">RunLab</string>
+    <string name="toolbar_lets_go">Let\'s go, %1$s!</string>
+
+    <!-- Navigation -->
+    <string name="nav_runs">Your runs</string>
+    <string name="nav_statistics">Statistics</string>
+    <string name="nav_settings">Settings</string>
+
+    <!-- Profile (setup + settings) -->
+    <string name="setup_welcome">Welcome!\nPlease enter your name and weight.</string>
+    <string name="field_name">Your name</string>
+    <string name="field_weight">Your weight</string>
+    <string name="unit_kg">kg</string>
+    <string name="error_name_required">Enter your name</string>
+    <string name="error_weight_invalid">Enter a valid weight</string>
     <string name="setup_continue">Continue</string>
-    <string name="setup_kg">kg</string>
-    <string name="setup_your_weight">Your Weight</string>
-    <string name="setup_your_name">Your Name</string>
-    <string name="setup_welcome_nplease_enter_your_name_and_weight">Welcome!\nPlease enter your name and weight.</string>
-    <string name="menu_your_runs">Your Runs</string>
-    <string name="menu_statistics">Statistics</string>
-    <string name="menu_settings">settings</string>
-    <string name="main_running_app">Running App</string>
-    <string name="tracking_let_s_go_username">Let\'s go, USERNAME!</string>
-    <string name="tracking_finish_run">Finish Run</string>
-    <string name="tracking_timer">00:00:00:00</string>
+    <string name="settings_apply">Apply changes</string>
+    <string name="settings_saved">Changes saved</string>
+
+    <!-- Runs -->
+    <string name="runs_sort_by">Sort by</string>
+    <string name="sort_date">Date</string>
+    <string name="sort_running_time">Running time</string>
+    <string name="sort_distance">Distance</string>
+    <string name="sort_avg_speed">Average speed</string>
+    <string name="sort_calories">Calories burned</string>
+    <string name="runs_empty">No runs yet.\nTap + to start your first run.</string>
+    <string name="runs_start_run">Start a run</string>
+    <string name="run_map_snapshot">Route map</string>
+    <string name="run_delete_title">Delete run?</string>
+    <string name="run_delete_message">This run will be removed permanently.</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_cancel">Cancel</string>
+
+    <!-- Permissions -->
+    <string name="permission_title">Location permission required</string>
+    <string name="permission_message">RunLab needs location access to track your runs.</string>
+    <string name="permission_grant">Grant</string>
+    <string name="permission_open_settings">Open settings</string>
+
+    <!-- Tracking -->
+    <string name="tracking_start">Start</string>
+    <string name="tracking_stop">Stop</string>
+    <string name="tracking_finish">Finish run</string>
+    <string name="tracking_cancel_run">Cancel run</string>
+    <string name="tracking_cancel_title">Cancel the run?</string>
+    <string name="tracking_cancel_message">Are you sure you want to cancel the current run and delete all its data?</string>
+    <string name="tracking_run_saved">Run saved</string>
+    <string name="action_yes">Yes</string>
+    <string name="action_no">No</string>
+    <string name="action_pause">Pause</string>
+    <string name="action_resume">Resume</string>
+    <string name="notification_channel_tracking">Tracking</string>
+
+    <!-- Statistics -->
+    <string name="stats_total_distance">Total distance</string>
+    <string name="stats_total_time">Total time</string>
+    <string name="stats_total_calories">Total calories burned</string>
+    <string name="stats_avg_speed">Average speed</string>
+    <string name="stats_chart_title">Average speed over time</string>
+    <string name="stats_no_runs">No runs yet</string>
+
+    <!-- Units -->
+    <string name="format_distance_km">%1$.2f km</string>
+    <string name="format_speed_kmh">%1$.1f km/h</string>
+    <string name="format_calories">%1$d kcal</string>
 </resources>
