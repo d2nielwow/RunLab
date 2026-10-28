@@ -18,7 +18,6 @@ data class StatisticsUiState(
     val totalDistanceInMeters: Int = 0,
     val totalCalories: Int = 0,
     val avgSpeedKmh: Float = 0f,
-    /** Oldest first, so the chart reads left to right. */
     val runsChronological: List<Run> = emptyList()
 )
 

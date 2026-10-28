@@ -6,10 +6,6 @@ import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 import java.io.File
 
-/**
- * v1 stored the map snapshot as a PNG BLOB in `img`; v2 stores it as a file and keeps `imagePath`.
- * Blobs are read in chunks because a single row larger than the 2 MB CursorWindow can't be read at once.
- */
 class Migration1To2(private val imagesDir: File) : Migration(1, 2) {
 
     override fun migrate(db: SupportSQLiteDatabase) {
@@ -61,7 +57,7 @@ class Migration1To2(private val imagesDir: File) : Migration(1, 2) {
 
     private fun copyBlobToFile(db: SupportSQLiteDatabase, id: Long, size: Int, file: File) {
         file.outputStream().use { out ->
-            var offset = 1 // substr() is 1-based
+            var offset = 1
             while (offset <= size) {
                 db.query(
                     "SELECT substr(img, ?, ?) FROM running_table WHERE id = ?",

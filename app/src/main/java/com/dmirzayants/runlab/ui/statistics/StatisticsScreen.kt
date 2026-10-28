@@ -136,7 +136,6 @@ private fun AvgSpeedChart(runs: List<Run>) {
         }
     }
 
-    // Marker labels are plain strings, so they are prepared here with the current locale.
     val resources = LocalResources.current
     val markerLabels = remember(runs, resources) {
         runs.map { run ->

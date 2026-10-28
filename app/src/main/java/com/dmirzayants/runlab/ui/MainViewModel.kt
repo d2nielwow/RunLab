@@ -15,7 +15,6 @@ class MainViewModel @Inject constructor(
     userPreferences: UserPreferencesRepository
 ) : ViewModel() {
 
-    /** null until DataStore has been read; the start destination depends on it. */
     val profile: StateFlow<UserProfile?> = userPreferences.userProfile
         .stateIn(viewModelScope, SharingStarted.Eagerly, null)
 }

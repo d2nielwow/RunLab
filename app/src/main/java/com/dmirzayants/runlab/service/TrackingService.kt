@@ -179,7 +179,6 @@ class TrackingService : LifecycleService() {
     private fun startForegroundService() {
         createNotificationChannel()
 
-        // Must be called within a few seconds of startService(); on Android 14+ the type is mandatory.
         ServiceCompat.startForeground(
             this,
             Constants.NOTIFICATION_ID,

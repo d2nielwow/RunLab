@@ -25,7 +25,6 @@ data class UserProfile(
 class UserPreferencesRepository @Inject constructor(
     private val dataStore: DataStore<Preferences>
 ) {
-    // Key names match the old SharedPreferences so SharedPreferencesMigration carries values over.
     private object Keys {
         val NAME = stringPreferencesKey("KEY_NAME")
         val WEIGHT_KG = floatPreferencesKey("KEY_WEIGHT_KG")

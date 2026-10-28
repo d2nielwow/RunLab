@@ -41,7 +41,6 @@ class MainActivity : ComponentActivity() {
                         .fillMaxSize()
                         .background(MaterialTheme.colorScheme.background)
                 ) {
-                    // Render nothing until DataStore is read so the start destination is right.
                     profile?.let {
                         RunLabApp(
                             profile = it,

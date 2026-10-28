@@ -20,7 +20,6 @@ object Constants {
     const val TIMER_UPDATE_INTERVAL = 50L
 
     const val USER_PREFERENCES_NAME = "user_preferences"
-    // SharedPreferences file used before the move to DataStore; migrated on first read.
     const val LEGACY_SHARED_PREFERENCES_NAME = "sharedPref"
     const val DEFAULT_WEIGHT = 80f
 }

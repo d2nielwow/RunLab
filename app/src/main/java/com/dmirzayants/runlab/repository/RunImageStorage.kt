@@ -16,7 +16,6 @@ class RunImageStorage @Inject constructor(
 ) {
     val imagesDir = File(context.filesDir, Constants.RUN_IMAGES_DIR)
 
-    /** Saves the map snapshot as JPEG and returns its absolute path. */
     suspend fun save(bitmap: Bitmap, timestamp: Long): String = withContext(Dispatchers.IO) {
         imagesDir.mkdirs()
         val file = File(imagesDir, "run_$timestamp.jpg")

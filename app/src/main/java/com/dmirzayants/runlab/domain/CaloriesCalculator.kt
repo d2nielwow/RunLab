@@ -2,24 +2,16 @@ package com.dmirzayants.runlab.domain
 
 import kotlin.math.roundToInt
 
-/**
- * Energy expenditure estimate: kcal = MET × body weight (kg) × duration (h).
- *
- * MET values by speed are taken from the 2011 Compendium of Physical Activities
- * (walking codes 17xxx, running codes 12xxx) and linearly interpolated between points.
- * The old formula `km × weight` ignored pace entirely.
- */
 object CaloriesCalculator {
 
-    // speed km/h to MET
     private val metTable = listOf(
-        0.0 to 1.3,   // standing
+        0.0 to 1.3,
         3.2 to 2.8,
         4.0 to 3.0,
         4.8 to 3.5,
         5.6 to 4.3,
-        6.4 to 5.0,   // brisk walk
-        8.0 to 8.3,   // running from here on
+        6.4 to 5.0,
+        8.0 to 8.3,
         8.4 to 9.0,
         9.7 to 9.8,
         10.8 to 10.5,

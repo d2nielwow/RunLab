@@ -43,9 +43,6 @@ import com.dmirzayants.runlab.ui.statistics.StatisticsScreen
 import com.dmirzayants.runlab.ui.tracking.TrackingScreen
 import kotlinx.coroutines.launch
 
-/**
- * @param openTrackingRequested true when the activity was opened from the tracking notification.
- */
 @Composable
 fun RunLabApp(
     profile: UserProfile,
@@ -57,7 +54,6 @@ fun RunLabApp(
     val scope = rememberCoroutineScope()
     val runSavedMessage = stringResource(R.string.tracking_run_saved)
 
-    // Decided once: changing it later would rebuild the graph.
     val startDestination: Any = remember { if (profile.isOnboarded) RunsRoute else SetupRoute }
 
     val backStackEntry by navController.currentBackStackEntryAsState()
